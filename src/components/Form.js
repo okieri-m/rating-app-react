@@ -6,19 +6,19 @@ import "./Form.css";
 export const Form = () => {
 
     const [ selectedRating, setSelectedRating ] = useState(null);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-   const handleRatingClick = (rating) =>{
-    setSelectedRating(rating);
-   };
+  const handleRatingClick = (rating) =>{
+   setSelectedRating(rating);
+  };
 
-   const handleSubmit = (rating) =>{
-    if (selectedRating === null){
-        alert("Select your feedback");
-    } else {
-        navigate("./thanks.html", {state: {rating}});
-      }
-   };
+  const handleSubmit = () =>{
+   if (selectedRating === null){
+       alert("Select your feedback");
+   } else {
+       navigate("/thanks", {state: {rating: selectedRating}});
+     }
+  };
 
   return (
     <form>
